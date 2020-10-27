@@ -31,4 +31,4 @@ for i in range(len(ele)):
   ele_coor = np.zeros([int(ele_num[i]), 3])
   ele_coor = coor[sum: sum+int(ele_num[i]), :]
   sum = sum + int(ele_num[i])
-  np.savetxt('%s' % ele[i], ele_coor)
+  np.savetxt('%s' % ele[i], np.dot(ele_coor, latt.T), fmt="%10.5f")
